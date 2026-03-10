@@ -12,18 +12,18 @@ export const router = createHashRouter([
     paht: "/",
     element: <FrontLayout />,
     children: [
-      { index: true, element: <Home /> },//首頁(含搜尋)
-      {path: "detail/:id" , element:<Detail/>}//項目詳細內容
-      { path: "login", element: <Login /> },//登入畫面
+      { index: true, element: <Home /> }, //首頁(含搜尋)
+      { path: "detail/:id", element: <Detail /> }, //項目詳細內容
+      { path: "login", element: <Login /> }, //登入畫面
     ],
   },
   {
     paht: "/admin",
     element: <AdminLayout />,
-    children: [{ path: "management", element: <Management /> }],//後台管理頁面
+    children: [{ path: "management", element: <Management /> }], //後台管理頁面
   },
   {
     path: "*",
-    element:<NotFound/>
-  }
+    element: <NotFound />,
+  },
 ]);
