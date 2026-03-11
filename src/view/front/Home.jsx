@@ -27,26 +27,14 @@ function Home() {
   }, []);
 
   const handleView = async (id) => {
-    /*  navigate 傳 state方式，此方式不適用於此情況(會導致如果輸入對應的連結卻無法產生結果)，此方式較適合用在有先後步驟的地方，例如：表單(有下一頁的那種)
-    try {
-      const response = await axios.get(
-        `${API_BASE}/api/${API_PATH}/product/${id}`
-      );
-      console.log(response.data.product);
-      navigate(`/product/${id}`, {
-        state: {
-          productData: response.data.product,
-        },
-      });
-    } catch (error) {
-      console.log(error.response.data);
-    } */
-
     navigate(`/product/${id}`);
   };
 
   return (
     <div className="container">
+      {/* 搜尋區塊 */}
+      {/* 篩選區塊 */}
+      {/* 項目區塊 */}
       <div className="row">
         {products.map((product) => (
           <div className="col-md-4 mb-3" key={product.id}>

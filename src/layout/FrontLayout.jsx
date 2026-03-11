@@ -7,16 +7,24 @@ function FrontLayout() {
       <header>
         <ul className="nav">
           <li className="nav-item">
-            <Link className="nav-link">logo</Link>
+            <Link className="nav-link" to="/">
+              logo
+            </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link">home</Link>
+            <Link className="nav-link" to="/">
+              home
+            </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link">dashboard</Link>
+            <Link className="nav-link" to="">
+              dashboard
+            </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link">login</Link>
+            <Link className="nav-link" to="/admin/management">
+              後台
+            </Link>
           </li>
         </ul>
       </header>

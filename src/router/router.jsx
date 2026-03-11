@@ -9,7 +9,7 @@ import NotFound from "../view/front/NotFound";
 
 export const router = createHashRouter([
   {
-    paht: "/",
+    path: "/",
     element: <FrontLayout />,
     children: [
       { index: true, element: <Home /> }, //首頁(含搜尋)
@@ -18,7 +18,7 @@ export const router = createHashRouter([
     ],
   },
   {
-    paht: "/admin",
+    path: "/admin",
     element: <AdminLayout />,
     children: [{ path: "management", element: <Management /> }], //後台管理頁面
   },
