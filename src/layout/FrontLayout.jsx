@@ -1,5 +1,6 @@
 //前端頁面骨架
 import { Link, Outlet } from "react-router";
+import "../assets/style.css";
 
 function FrontLayout() {
   return (
@@ -14,6 +15,11 @@ function FrontLayout() {
           <li className="nav-item">
             <Link className="nav-link" to="/">
               home
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="test">
+              測試用
             </Link>
           </li>
           <li className="nav-item">
