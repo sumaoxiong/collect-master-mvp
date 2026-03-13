@@ -55,7 +55,9 @@ function FrontLayout() {
 
       <footer className="site-footer py-4">
         <div className="container">
-          <div className="glass-footer text-center py-3 px-3">2026 蘇茂雄</div>
+          <div className="glass-footer text-center py-3 px-3">
+            © 2026 蘇茂雄
+          </div>
         </div>
       </footer>
     </div>

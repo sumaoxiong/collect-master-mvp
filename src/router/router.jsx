@@ -6,7 +6,7 @@ import AdminLayout from "../layout/AdminLayout";
 import Management from "../view/admin/Management";
 import Detail from "../view/front/Detail";
 import NotFound from "../view/front/NotFound";
-import Test from "../view/front/Test";
+import Dashboard from "../view/front/dashboard";
 
 export const router = createHashRouter([
   {
@@ -14,9 +14,9 @@ export const router = createHashRouter([
     element: <FrontLayout />,
     children: [
       { index: true, element: <Home /> }, //首頁(含搜尋)
-      { path: "test", element: <Test /> }, //項目詳細內容
-      { path: "detail/:id", element: <Detail /> }, //項目詳細內容
+      { path: "detail/:id", element: <Detail /> }, //項目詳細內容(暫時用不到)
       { path: "login", element: <Login /> }, //登入畫面
+      { path: "dashboard", element: <Dashboard /> }, //儀表板
     ],
   },
   {

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useMemo, useState } from "react";
+import { FILTER_MAP } from "../../utils/filterMap";
 
 // logo icon
 import ytIcon from "../../img/logo/yt_icon.png";
@@ -8,39 +9,6 @@ import threadIcon from "../../img/logo/thread_icon.png";
 
 const API_BASE = import.meta.env.VITE_API_BASE;
 const API_PATH = import.meta.env.VITE_API_PATH;
-
-// 第一階只是分類導覽，真正篩選用第二階 tag
-const FILTER_MAP = {
-  健身: ["健身", "彈力繩", "無器械", "胸肌", "腹肌"],
-  "建築&室內設計": ["室內設計", "建築設計", "園藝"],
-  料理教學: ["健身餐", "微波料理", "電鍋料理", "氣炸料理", "甜點"],
-  美食: ["美食", "義式", "日式", "火鍋", "素食", "buffet", "飲料"],
-  地區: [
-    "全台",
-    "台北",
-    "新北",
-    "台北市",
-    "宜蘭縣",
-    "基隆市",
-    "桃園市",
-    "新竹縣市",
-    "苗栗縣",
-    "台中市",
-    "彰化縣",
-    "南投縣",
-    "雲林縣",
-    "嘉義縣市",
-    "台南市",
-    "高雄市",
-    "屏東縣",
-    "台東縣",
-    "花蓮縣",
-    "澎湖縣",
-    "金門縣",
-    "連江縣",
-  ],
-  景點: ["景點"],
-};
 
 function Home() {
   const [products, setProducts] = useState([]);

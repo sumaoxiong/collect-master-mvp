@@ -614,3 +614,133 @@ p, .form-control, .form-select, .btn, .all-filter-text {
     height: 16px;
   }
 }
+
+
+
+/* =========================================
+   8. dashboard
+========================================= */
+
+
+
+
+.dashboard-title {
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.03em;
+}
+
+.dashboard-subtitle {
+  color: var(--text-soft);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.dashboard-summary-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.2rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 12px 30px rgba(148, 163, 184, 0.14);
+  color: var(--text-main);
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.chart-glass-card {
+  background: rgba(255, 255, 255, 0.38);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 24px;
+  box-shadow: 0 16px 36px rgba(148, 163, 184, 0.14);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.chart-glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 42px rgba(148, 163, 184, 0.2);
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.chart-card-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.chart-card-subtitle {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+.chart-total-badge {
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.52);
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  color: var(--text-main);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.donut-chart-wrap {
+  min-height: 320px;
+}
+
+.chart-tag-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.chart-summary-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  color: var(--text-main);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* c3 圖表也一起調整成較柔和風格 */
+.c3 text {
+  fill: #4b5563 !important;
+  font-family: "Inter", sans-serif !important;
+}
+
+.c3-legend-item text {
+  fill: #4b5563 !important;
+}
+
+.c3-chart-arcs-title {
+  fill: #1f2937 !important;
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+}
+
+@media (max-width: 767.98px) {
+  .chart-glass-card {
+    border-radius: 20px;
+  }
+
+  .dashboard-summary-chip,
+  .chart-total-badge,
+  .chart-summary-chip {
+    font-size: 0.82rem;
+  }
+
+  .donut-chart-wrap {
+    min-height: 280px;
+  }
+}
