@@ -1,16 +1,71 @@
-# React + Vite
+# Collect Master MVP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 專案簡介
 
-Currently, two official plugins are available:
+Collect Master 是一個將 **Instagram、YouTube、Threads 等平台的收藏內容集中管理**的工具。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+透過 **縮圖牆 + 多標籤篩選** 的方式，讓使用者可以快速找到自己收藏的內容。
 
-## React Compiler
+使用者可以透過標籤組合，例如：
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 嘉義 + 景點
+- 嘉義 + 美食
+- React + 教學
 
-## Expanding the ESLint configuration
+快速篩選出符合條件的收藏內容。
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+此專案為 **MVP (Minimum Viable Product)**，主要目的是驗證「跨平台收藏集中管理」的概念。
+
+---
+
+## 專案背景
+
+目前多數人會在不同平台收藏內容，例如：
+
+- Instagram：景點、美食、穿搭
+- YouTube：教學影片、技術分享
+- Threads：文章、靈感
+- 其他網站連結
+
+但這樣會產生幾個問題：
+
+### 收藏分散
+
+收藏內容散落在不同平台，需要不停切換 App 才能找到。
+
+### 分類能力有限
+
+多數平台只支援單一分類或資料夾，無法做多條件搜尋。
+
+例如：
+
+- 嘉義 + 景點
+- 嘉義 + 美食
+- 台北 + 咖啡
+
+這類 **多標籤交集搜尋** 在原平台通常無法做到。
+
+### 收藏越多反而越難找
+
+當收藏數量累積到一定程度後，反而更難找到想要的資訊。
+
+因此本專案希望透過 **集中管理 + 多標籤篩選** 的方式來解決這個問題。
+
+---
+
+## 開發工具
+
+本專案目前為前端 MVP 專案，使用以下工具開發：
+
+- React
+- Vite
+- JavaScript
+- CSS
+
+收藏資料目前使用 **六挑學院課程 API** 進行展示與測試。
+
+未來版本可能會加入：
+
+- 後端
+- 資料庫
+- 自動匯入收藏資料
