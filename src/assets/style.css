@@ -1,324 +1,119 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
+/* =========================================
+   1. 變數與全域設定 (Variables & Global)
+========================================= */
 :root {
-    --bg-start: #e0e7ff;
-    --bg-end: #f3e8ff;
-    --glass-bg: rgba(255, 255, 255, 0.4);
-    --glass-border: rgba(255, 255, 255, 0.3);
-    --glass-shadow: 0 12px 35px rgba(148, 163, 184, 0.18);
-    --glass-shadow-hover: 0 18px 40px rgba(148, 163, 184, 0.24);
-    --text-main: #1f2937;
-    --text-soft: #6b7280;
-    --text-faint: #94a3b8;
-    --chip-bg: rgba(255, 255, 255, 0.55);
-    --white-strong: rgba(255, 255, 255, 0.72);
+  --bg-start: #e0e7ff;
+  --bg-end: #f3e8ff;
+  --glass-bg: rgba(255, 255, 255, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-shadow: 0 12px 35px rgba(148, 163, 184, 0.18);
+  --glass-shadow-hover: 0 18px 40px rgba(148, 163, 184, 0.24);
+  --text-main: #1f2937;
+  --text-soft: #6b7280;
+  --text-faint: #94a3b8;
+  --chip-bg: rgba(255, 255, 255, 0.55);
+  --white-strong: rgba(255, 255, 255, 0.72);
 }
 
 * {
-    font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 body {
-    min-height: 100vh;
-    background:
-        radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.6), transparent 24%),
-        linear-gradient(135deg, var(--bg-start), var(--bg-end));
-    color: var(--text-main);
-}
-
-.page-shell {
-    background: rgba(255, 255, 255, 0.22);
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    border-radius: 32px;
-    box-shadow: 0 20px 60px rgba(148, 163, 184, 0.18);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-}
-
-.section-box {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-.logo-circle {
-    width: 84px;
-    height: 84px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 1.1rem;
-    color: var(--text-main);
-    background: rgba(255, 255, 255, 0.52);
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    box-shadow: var(--glass-shadow);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-.top-nav-btn {
-    min-width: 140px;
-}
-
-.search-input,
-.search-select,
-.search-btn {
-    height: 58px;
-}
-
-.filter-label {
-    min-width: 88px;
-    font-weight: 700;
-    color: var(--text-main);
-}
-
-.ig-card {
-    border: 1px solid var(--glass-border);
-    border-radius: 28px;
-    overflow: hidden;
-    background: var(--glass-bg);
-    box-shadow: var(--glass-shadow);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-}
-
-.ig-card:hover {
-    transform: translateY(-6px) scale(1.015);
-    box-shadow: var(--glass-shadow-hover);
-    background: rgba(255, 255, 255, 0.48);
-}
-
-.ig-card-media {
-    position: relative;
-    aspect-ratio: 4 / 5;
-    overflow: hidden;
-    background: linear-gradient(135deg, #dbe4f3, #f8f9fa);
-}
-
-.ig-card-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.35s ease, filter 0.35s ease;
-}
-
-.ig-card:hover .ig-card-media img {
-    transform: scale(1.04);
-    filter: brightness(1.04);
-}
-
-.brand-badge {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    border-radius: 999px;
-    padding: 8px 14px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    color: var(--text-main);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-.reel-badge {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.72);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    color: var(--text-main);
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-.card-tag {
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.42);
-    background: var(--chip-bg);
-    padding: 0.45rem 0.85rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--text-main);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-}
-
-.card-description {
-    color: var(--text-soft);
-    min-height: 52px;
-    line-height: 1.7;
-}
-
-.filter-chip {
-    min-width: 110px;
-}
-
-.all-filter-text {
-    font-weight: 700;
-    color: var(--text-soft);
-    white-space: nowrap;
-}
-
-.form-control,
-.form-select,
-.btn {
-    border-radius: 18px !important;
-}
-
-.form-control,
-.form-select {
-    background: rgba(255, 255, 255, 0.42);
-    border: 1px solid rgba(255, 255, 255, 0.35) !important;
-    box-shadow: var(--glass-shadow);
-    color: var(--text-main);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-.form-control::placeholder {
-    color: #7c8595;
-}
-
-.form-control:focus,
-.form-select:focus {
-    background: rgba(255, 255, 255, 0.55);
-    border-color: rgba(255, 255, 255, 0.6) !important;
-    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.2), var(--glass-shadow);
-    color: var(--text-main);
-}
-
-.btn-light,
-.search-btn,
-.filter-chip,
-.btn-link {
-    background: rgba(255, 255, 255, 0.46) !important;
-    border: 1px solid rgba(255, 255, 255, 0.38) !important;
-    box-shadow: var(--glass-shadow);
-    color: var(--text-main) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease,
-        background 0.2s ease;
-}
-
-.btn-light:hover,
-.search-btn:hover,
-.filter-chip:hover,
-.btn-link:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: var(--glass-shadow-hover);
-    filter: brightness(1.03);
-    background: rgba(255, 255, 255, 0.62) !important;
-}
-
-.btn-link {
-    padding: 0.45rem 0.9rem;
-    border-radius: 999px !important;
-    text-decoration: none !important;
-}
-
-h3,
-.h5,
-.fs-5 {
-    color: var(--text-main);
-    font-weight: 700 !important;
-    letter-spacing: -0.02em;
-}
-
-p,
-.form-control,
-.form-select,
-.btn,
-.all-filter-text {
-    font-weight: 500;
-}
-
-@media (max-width: 991.98px) {
-    .top-nav-btn {
-        min-width: auto;
-        width: 100%;
-    }
-
-    .filter-label {
-        min-width: auto;
-    }
-
-    .all-filter-text {
-        width: 100%;
-        text-align: left;
-    }
-}
-
-
-
-
-
-
-
-.search-input,
-.search-select,
-.search-btn {
-  height: 58px;
-}
-
-.filter-label {
-  min-width: 88px;
-  font-weight: 700;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.6), transparent 24%),
+    linear-gradient(135deg, var(--bg-start), var(--bg-end));
   color: var(--text-main);
 }
 
-.filter-chip {
-  min-width: 110px;
+h3, .h5, .fs-5 {
+  color: var(--text-main);
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
 }
 
-.active-filter {
-  background: rgba(255, 255, 255, 0.72) !important;
-  box-shadow: 0 18px 40px rgba(148, 163, 184, 0.24);
-  transform: translateY(-2px);
+p, .form-control, .form-select, .btn, .all-filter-text {
+  font-weight: 500;
 }
 
-.all-filter-text {
-  font-weight: 700;
-  color: var(--text-soft);
-  white-space: nowrap;
+/* =========================================
+   2. 共用元件與玻璃特效 (Common & Glass Components)
+========================================= */
+.page-shell {
+  background: rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 32px;
+  box-shadow: 0 20px 60px rgba(148, 163, 184, 0.18);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
-.brand-icon {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
+.section-box {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
+/* 表單與按鈕 */
+.form-control, .form-select, .btn {
+  border-radius: 18px !important;
+}
 
+.form-control, .form-select {
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  box-shadow: var(--glass-shadow);
+  color: var(--text-main);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 
+.form-control::placeholder {
+  color: #7c8595;
+}
 
+.form-control:focus, .form-select:focus {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.2), var(--glass-shadow);
+  color: var(--text-main);
+}
 
+.btn-light, .search-btn, .filter-chip, .btn-link {
+  background: rgba(255, 255, 255, 0.46) !important;
+  border: 1px solid rgba(255, 255, 255, 0.38) !important;
+  box-shadow: var(--glass-shadow);
+  color: var(--text-main) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease, background 0.2s ease;
+}
 
+.btn-light:hover, .search-btn:hover, .filter-chip:hover, .btn-link:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--glass-shadow-hover);
+  filter: brightness(1.03);
+  background: rgba(255, 255, 255, 0.62) !important;
+}
 
+.btn-link {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+}
 
-
-.search-input,
-.search-select,
-.search-btn {
+/* =========================================
+   3. 搜尋與篩選區塊 (Search & Filters)
+========================================= */
+.search-input, .search-select, .search-btn {
   height: 58px;
 }
 
@@ -339,10 +134,10 @@ p,
   line-height: 1.7;
 }
 
-.brand-icon {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
+.active-filter {
+  background: rgba(255, 255, 255, 0.72) !important;
+  box-shadow: 0 18px 40px rgba(148, 163, 184, 0.24);
+  transform: translateY(-2px);
 }
 
 .selected-chip {
@@ -359,19 +154,123 @@ p,
   background: rgba(255, 255, 255, 0.78);
 }
 
+/* =========================================
+   4. 卡片區塊 (Cards)
+========================================= */
+.ig-card {
+  border: 1px solid var(--glass-border);
+  border-radius: 28px;
+  overflow: hidden;
+  background: var(--glass-bg);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.ig-card:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: var(--glass-shadow-hover);
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.ig-card-media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: linear-gradient(135deg, #dbe4f3, #f8f9fa);
+}
+
+.ig-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.ig-card:hover .ig-card-media img {
+  transform: scale(1.04);
+  filter: brightness(1.04);
+}
+
+.brand-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.brand-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.reel-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--text-main);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.card-tag {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  background: var(--chip-bg);
+  padding: 0.45rem 0.85rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-main);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.card-title-custom {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.card-description {
+  color: var(--text-soft);
+  min-height: 52px;
+  line-height: 1.7;
+}
+
+.card-link-btn {
+  font-size: 0.875rem;
+  padding: 0.35rem 0.7rem;
+}
+
+/* =========================================
+   5. 進階篩選彈跳視窗 (Modal)
+========================================= */
 .glass-modal {
   background: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-
   border-radius: 24px;
-
   border: 1px solid rgba(255, 255, 255, 0.35);
-
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5);
-
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
   overflow: hidden;
 }
 
@@ -396,7 +295,7 @@ p,
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  border: 0;
+  border: 1px solid rgba(203, 213, 225, 0.7);
   border-radius: 14px;
   padding: 0.9rem 1rem;
   background: rgba(255, 255, 255, 0.42);
@@ -405,8 +304,7 @@ p,
   transition: 0.2s ease;
 }
 
-.filter-main-item.active,
-.filter-main-item:hover {
+.filter-main-item.active, .filter-main-item:hover {
   background: rgba(255, 255, 255, 0.78);
   transform: translateX(2px);
 }
@@ -442,6 +340,7 @@ p,
   padding: 0.8rem 0.9rem;
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(203, 213, 225, 0.7);
   color: var(--text-main);
   font-weight: 600;
   cursor: pointer;
@@ -452,113 +351,6 @@ p,
   background: rgba(255, 255, 255, 0.68);
 }
 
-.filter-check-item input {
-  width: 16px;
-  height: 16px;
-}
-
-.card-title-custom {
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-.card-link-btn {
-  font-size: 0.875rem;
-  padding: 0.35rem 0.7rem;
-}
-
-@media (max-width: 991.98px) {
-  .filter-panel-layout {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-
-  .filter-sub-list {
-    min-height: auto;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .filter-sub-options {
-    grid-template-columns: 1fr;
-  }
-
-  .card-tag {
-    font-size: 0.7rem;
-    padding: 0.25rem 0.5rem;
-  }
-
-  .card-title-custom {
-    font-size: 0.82rem;
-    margin-bottom: 0.35rem !important;
-  }
-
-  .card-description {
-    font-size: 0.72rem;
-    line-height: 1.45;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .card-link-btn {
-    font-size: 0.72rem;
-    padding: 0.25rem 0.55rem;
-  }
-
-  .brand-badge {
-    top: 10px;
-    left: 10px;
-    padding: 6px 10px;
-  }
-
-  .brand-icon {
-    width: 16px;
-    height: 16px;
-  }
-}
-
-
-.filter-main-item,
-.filter-check-item,
-.selected-chip {
-  border: 1px solid rgba(203, 213, 225, 0.7);
-}
-
-
-.filter-main-list,
-.filter-sub-options {
-  scrollbar-width: thin;
-  scrollbar-color: #cbd5e1 rgba(255, 255, 255, 0.2);
-}
-
-/* Chrome / Edge / Safari */
-.filter-main-list::-webkit-scrollbar,
-.filter-sub-options::-webkit-scrollbar {
-  width: 10px;
-}
-
-.filter-main-list::-webkit-scrollbar-track,
-.filter-sub-options::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
-}
-
-.filter-main-list::-webkit-scrollbar-thumb,
-.filter-sub-options::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #dbe4f0, #bfcddd);
-  border-radius: 999px;
-  border: 2px solid rgba(255, 255, 255, 0.22);
-}
-
-.filter-main-list::-webkit-scrollbar-thumb:hover,
-.filter-sub-options::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #cfd8e5, #b2c1d3);
-}
-
-
-/* check box樣式 */
 .filter-check-item input {
   width: 16px;
   height: 16px;
@@ -575,10 +367,30 @@ p,
   transform: none;
 }
 
+/* 卷軸樣式 (Scrollbar) */
+.filter-main-list, .filter-sub-options {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 rgba(255, 255, 255, 0.2);
+}
+.filter-main-list::-webkit-scrollbar, .filter-sub-options::-webkit-scrollbar {
+  width: 10px;
+}
+.filter-main-list::-webkit-scrollbar-track, .filter-sub-options::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+}
+.filter-main-list::-webkit-scrollbar-thumb, .filter-sub-options::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #dbe4f0, #bfcddd);
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.22);
+}
+.filter-main-list::-webkit-scrollbar-thumb:hover, .filter-sub-options::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #cfd8e5, #b2c1d3);
+}
 
-
-
-/* frontlayout */
+/* =========================================
+   6. 整體佈局 (Front Layout)
+========================================= */
 .front-layout {
   min-height: 100vh;
   display: flex;
@@ -623,8 +435,7 @@ p,
   font-weight: 800;
   font-size: 1rem;
   letter-spacing: -0.02em;
-  transition: transform 0.2s ease, box-shadow 0.2s ease,
-    background 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .brand-logo-circle:hover {
@@ -650,8 +461,7 @@ p,
   box-shadow: 0 10px 25px rgba(148, 163, 184, 0.12);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  transition: transform 0.2s ease, box-shadow 0.2s ease,
-    background 0.2s ease, color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
 .nav-glass-link:hover {
@@ -690,65 +500,117 @@ p,
   font-weight: 600;
 }
 
-/* RWD */
+/* =========================================
+   7. 響應式設計 (RWD)
+========================================= */
 @media (max-width: 991.98px) {
+  /* 導覽列 */
   .glass-navbar {
     justify-content: center !important;
   }
-
   .nav-center {
     order: 3;
     width: 100%;
   }
-
   .nav-right {
     order: 2;
   }
-
   .nav-glass-link {
     min-width: 100px;
     padding: 0.75rem 1rem;
   }
-
   .brand-logo-circle {
     width: 64px;
     height: 64px;
     font-size: 0.95rem;
   }
+  
+  /* 搜尋與篩選 */
+  .top-nav-btn {
+    min-width: auto;
+    width: 100%;
+  }
+  .filter-label {
+    min-width: auto;
+  }
+  .all-filter-text {
+    width: 100%;
+    text-align: left;
+  }
+  
+  /* Modal */
+  .filter-panel-layout {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .filter-sub-list {
+    min-height: auto;
+  }
 }
 
 @media (max-width: 767.98px) {
+  /* 導覽列 */
   .site-header {
     padding-top: 0.5rem !important;
   }
-
   .glass-navbar {
     border-radius: 22px;
     padding: 1rem !important;
   }
-
   .nav-center {
     gap: 0.5rem !important;
   }
-
   .nav-glass-link {
     min-width: calc(33.333% - 0.5rem);
     font-size: 0.82rem;
     padding: 0.7rem 0.75rem;
   }
-
   .nav-admin-link {
     min-width: auto;
     font-size: 0.82rem;
   }
-
   .brand-logo-circle {
     width: 56px;
     height: 56px;
     font-size: 0.85rem;
   }
-
   .glass-footer {
     font-size: 0.9rem;
+  }
+
+  /* Modal */
+  .filter-sub-options {
+    grid-template-columns: 1fr;
+  }
+
+  /* 卡片微調 */
+  .card-tag {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+  }
+  .card-title-custom {
+    font-size: 0.82rem;
+    margin-bottom: 0.35rem !important;
+  }
+  .card-description {
+    font-size: 0.72rem;
+    line-height: 1.45;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .card-link-btn {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.55rem;
+  }
+  .brand-badge {
+    top: 10px;
+    left: 10px;
+    padding: 6px 10px;
+  }
+  .brand-icon {
+    width: 16px;
+    height: 16px;
   }
 }

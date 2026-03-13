@@ -264,7 +264,7 @@ function Home() {
       <div className="row g-3">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
-            <div className="col-4" key={product.id}>
+            <div className="col-12 col-md-6 col-lg-4" key={product.id}>
               <div className="ig-card h-100">
                 <div className="ig-card-media">
                   <img src={product.imageUrl} alt={product.title} />
